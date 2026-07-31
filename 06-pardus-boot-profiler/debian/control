@@ -1,7 +1,7 @@
 Source: pardus-boot-profiler
 Section: utils
 Priority: optional
-Maintainer: Teknofest 2026 Geliştirme <iletisim@teknofest.org>
+Maintainer: Teknofest 2026 Gelistirme <iletisim@teknofest.org>
 Build-Depends: debhelper-compat (= 13), dh-python, python3-all
 Standards-Version: 4.6.0
 
