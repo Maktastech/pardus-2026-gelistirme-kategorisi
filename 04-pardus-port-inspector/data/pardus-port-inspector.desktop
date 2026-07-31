@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus Rogue Socket & Port Inspector
+Name[tr]=Pardus Rogue Socket & Port Inspector
+Comment=psutil.
+Comment[tr]=psutil.
+Exec=pardus-port-inspector
+Icon=security-high
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus Auto-Fixer & Lock Rescue Tool
+Name[tr]=Pardus Auto-Fixer & Lock Rescue Tool
+Comment=Araç sistemi tarar: çalışan paket yöneticilerini, sahipsiz kilit dosyalarını (fuser ile doğrulanır), dpkg -
+Comment[tr]=Araç sistemi tarar: çalışan paket yöneticilerini, sahipsiz kilit dosyalarını (fuser ile doğrulanır), dpkg -
+Exec=pardus-apt-doctor
+Icon=system-software-install
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus System Health & Journal Log Doctor
+Name[tr]=Pardus System Health & Journal Log Doctor
+Comment=journalctl -p <öncelik> -o json çıktısı bir Regex kural motorundan geçirilir.
+Comment[tr]=journalctl -p <öncelik> -o json çıktısı bir Regex kural motorundan geçirilir.
+Exec=pardus-log-doctor
+Icon=utilities-log-viewer
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;

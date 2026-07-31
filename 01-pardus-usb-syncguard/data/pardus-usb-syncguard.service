@@ -1,0 +1,12 @@
+[Unit]
+Description=Pardus USB Sync-Guard & Buffer Tracker
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/pardus-usb-syncguard --tepsi
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

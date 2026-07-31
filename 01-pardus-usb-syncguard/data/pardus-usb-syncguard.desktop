@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus USB Sync-Guard & Buffer Tracker
+Name[tr]=Pardus USB Sync-Guard & Buffer Tracker
+Comment=Sistem tepsisinde çalışan bir izleyici Dirty + Writeback değerlerini yarım saniyede bir okur.
+Comment[tr]=Sistem tepsisinde çalışan bir izleyici Dirty + Writeback değerlerini yarım saniyede bir okur.
+Exec=pardus-usb-syncguard
+Icon=drive-removable-media
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;

@@ -1,0 +1,12 @@
+[Unit]
+Description=Pardus Thermal Throttling Guard
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/pardus-thermal-guard
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

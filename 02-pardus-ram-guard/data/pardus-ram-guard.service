@@ -1,0 +1,12 @@
+[Unit]
+Description=Pardus Dynamic RAM & OOM Crash Preventer
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/pardus-ram-guard
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

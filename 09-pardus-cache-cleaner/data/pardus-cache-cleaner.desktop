@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus Local Repository & Cache Cleaner
+Name[tr]=Pardus Local Repository & Cache Cleaner
+Comment=Altı temizlik alanı taranır ve her biri için kazanılacak alan tahmini gösterilir.
+Comment[tr]=Altı temizlik alanı taranır ve her biri için kazanılacak alan tahmini gösterilir.
+Exec=pardus-cache-cleaner
+Icon=user-trash-full
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;

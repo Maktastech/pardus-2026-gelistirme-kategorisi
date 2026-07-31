@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus Desktop Quick Restorer / Session Guard
+Name[tr]=Pardus Desktop Quick Restorer / Session Guard
+Comment=XFCE için ~/.
+Comment[tr]=XFCE için ~/.
+Exec=pardus-desktop-restorer
+Icon=preferences-desktop
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;

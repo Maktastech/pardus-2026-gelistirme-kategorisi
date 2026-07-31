@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus Offline Package & Dependency Bundler
+Name[tr]=Pardus Offline Package & Dependency Bundler
+Comment=apt-get install --print-uris ile paketin tüm bağımlılık ağacı çözülür, .
+Comment[tr]=apt-get install --print-uris ile paketin tüm bağımlılık ağacı çözülür, .
+Exec=pardus-offline-bundler
+Icon=package-x-generic
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;

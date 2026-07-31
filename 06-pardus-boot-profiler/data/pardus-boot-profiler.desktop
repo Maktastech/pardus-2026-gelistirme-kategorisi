@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus App Startup & Boot Profiler
+Name[tr]=Pardus App Startup & Boot Profiler
+Comment=systemd-analyze özeti ve blame çıktısı tabloya dökülür; her servisin toplam açılış süresindeki payı yüzde 
+Comment[tr]=systemd-analyze özeti ve blame çıktısı tabloya dökülür; her servisin toplam açılış süresindeki payı yüzde 
+Exec=pardus-boot-profiler
+Icon=preferences-system-time
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;

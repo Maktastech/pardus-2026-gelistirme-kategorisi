@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+<policyconfig>
+  <vendor>Pardus APT Doctor</vendor>
+  <vendor_url>https://github.com/pardus</vendor_url>
+
+  <action id="tr.org.pardus.aptdoctor.onar">
+    <description>Repair the package system</description>
+    <description xml:lang="tr">Paket sistemini onar</description>
+    <message>Authentication is required to repair the package system.</message>
+    <message xml:lang="tr">Pardus Paket Sistemi Onarım Aracı, apt/dpkg kilitlerini ve kırık paketleri onarmak için yönetici yetkisine ihtiyaç duyuyor.</message>
+    <icon_name>system-software-install</icon_name>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/share/pardus-apt-doctor/pardus-apt-doctor-helper</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+  </action>
+</policyconfig>

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus Dynamic RAM & OOM Crash Preventer
+Name[tr]=Pardus Dynamic RAM & OOM Crash Preventer
+Comment=RAM ve swap doluluğu sürekli izlenir.
+Comment[tr]=RAM ve swap doluluğu sürekli izlenir.
+Exec=pardus-ram-guard
+Icon=utilities-system-monitor
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;

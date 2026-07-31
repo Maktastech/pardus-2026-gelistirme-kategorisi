@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Pardus Thermal Throttling Guard
+Name[tr]=Pardus Thermal Throttling Guard
+Comment=/sys/class/thermal/ ve cpufreq verileri okunarak sıcaklık ve anlık/azami frekans oranı gösterilir.
+Comment[tr]=/sys/class/thermal/ ve cpufreq verileri okunarak sıcaklık ve anlık/azami frekans oranı gösterilir.
+Exec=pardus-thermal-guard
+Icon=sensors-temperature
+Terminal=false
+Categories=System;Utility;
+Keywords=pardus;sistem;
