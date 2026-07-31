@@ -1,0 +1,67 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies for linting and testing
+      run: |
+        python -m pip install --upgrade pip
+        pip install ruff pytest PyQt5
+
+    - name: Lint with Ruff
+      run: |
+        ruff check . || true
+
+    - name: Run Pytest
+      run: |
+        pytest tests/
+
+    - name: Install Debian Packaging Tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y dpkg-dev debhelper lintian dh-python python3-all
+
+    - name: Build Debian Packages
+      run: |
+        ./build-all-debs.sh
+
+    - name: Check with Lintian
+      run: |
+        lintian dist/*.deb || true
+
+    - name: Test Installation of Packages
+      run: |
+        sudo apt-get install -y ./dist/*.deb
+
+    - name: Verify Installation Paths and Services
+      run: |
+        echo "Checking /usr/bin..."
+        ls -l /usr/bin/pardus-*
+        echo "Checking Desktop files..."
+        ls -l /usr/share/applications/pardus-*.desktop || true
+        echo "Checking Polkit files..."
+        ls -l /usr/share/polkit-1/actions/ | grep pardus || true
+        echo "Checking Systemd Services..."
+        ls -l /lib/systemd/system/pardus-*.service || true
+        echo "Checking Systemctl Enablement..."
+        systemctl list-unit-files | grep pardus- || true
+
+    - name: Upload Debian Packages
+      uses: actions/upload-artifact@v4
+      with:
+        name: pardus-packages
+        path: dist/*.deb
