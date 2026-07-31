@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 """
 Pardus Auto-Fixer & Lock Rescue Tool
-apt/dpkg kilitlerini, yarim kalmis kurulumlari ve kirik bagimliliklari tespit
-edip onarir.
+apt/dpkg kilitlerini, yarım kalmış kurulumları ve kırık bağımlılıkları tespit
+edip onarır.
 
-Yetki modeli: acilista BIR KEZ pkexec ile bir yonetici yardimcisi baslatilir,
-sonraki tum islemler bu surec uzerinden yapilir; tekrar sifre sorulmaz.
+Yetki modeli: açılışta BİR KEZ pkexec ile bir yönetici yardımcısı başlatılır,
+sonraki tüm işlemler bu süreç üzerinden yapılır; tekrar şifre sorulmaz.
 Lisans: GPL-3.0
 """
 import json

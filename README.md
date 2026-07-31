@@ -42,6 +42,19 @@ Pardus'un açılışını (boot) yavaşlatan servisleri analiz edip listeler, op
 
 ## 💻 Kurulum ve Çalıştırma
 
-Her aracın kendi klasörü içerisinde bir `install.sh` kurulum betiği ve `src` klasöründe kaynak kodları bulunmaktadır. Herhangi bir aracı test etmek için klasör dizinine girip terminal üzerinden `python3 src/dosya_adi.py` şeklinde doğrudan çalıştırabilirsiniz.
+Tüm araçlar Pardus 25 XFCE üzerinde başarıyla test edilmiştir.
 
-**Tüm araçlar Pardus 25 XFCE üzerinde başarıyla test edilmiştir.**
+### Kurulum (Debian Paketi Olarak)
+Her araç için ayrı ayrı Debian paketi oluşturulmuştur. Paketleri GitHub Actions (CI) sekmesinden (Artifacts) indirebilirsiniz. 
+Geliştirici olarak yerelde derlemek isterseniz kök dizindeki `./build-all-debs.sh` betiğini çalıştırarak tüm `.deb` dosyalarını üretebilir ve `sudo apt install ./dist/*.deb` komutu ile sisteme kurabilirsiniz.
+
+### Kaynak Koddan Çalıştırma
+Debian paketi kurmadan test etmek isterseniz, ilgili aracın klasörüne girip `python3 src/dosya_adi.py` şeklinde çalıştırabilirsiniz (Bağımlılıklar: `python3-pyqt5`). Kullanım detayları için araçların içindeki `docs/KULLANIM.md` dosyalarına göz atabilirsiniz.
+
+---
+
+## 🏗️ Mimari Kararlar ve CI Süreci
+
+* **Güvenlik ve Yetki Modeli (pkexec JSON Süreci):** `03-pardus-apt-doctor` gibi yetki gerektiren araçlarda güvenlik için "Ayrıcalık Ayrımı" (Privilege Separation) kullanılmıştır. GUI normal kullanıcı olarak çalışırken, root yetkisi gereken işlemler için `pkexec` ile bir defalık yardımcı (helper) Python süreci başlatılır. GUI ve yardımcı süreç, birbirleriyle `stdin/stdout` üzerinden standart JSON veri formatıyla güvenli bir şekilde haberleşir. Kullanıcıdan her işlemde tekrar tekrar şifre istenmesi engellenmiştir.
+* **Saf İş Mantığı ve Pytest Testleri:** Araçların çekirdek kuralları ve veri işleme fonksiyonları (`kurallar.py`, `ayristirma.py` vb.) PyQt5 kütüphanelerinden arındırılarak bağımsız modüller haline getirilmiştir. Bu sayede grafiksel arayüze ihtiyaç duyulmadan mantık doğrulamaları için `.github` üzerinde çalışan otomatize `pytest` birim testleri (unit test) yazılmıştır.
+* **Sürekli Entegrasyon (CI/CD):** Projeye dahil edilen `.github/workflows/ci.yml` dosyası sayesinde; her kod gönderiminde otomatik olarak statik kod analizi (`ruff`), birim testleri (`pytest`), paket derlemesi (`dpkg-buildpackage`) yapılır. Derlenen paketlerin bağımlılık listeleri ve kalite denetimi `lintian` ile test edilerek Ubuntu runner'a test kurulumu yapılır.
