@@ -1,0 +1,4 @@
+src/*.py usr/share/pardus-usb-syncguard/
+data/*.desktop usr/share/applications/
+data/*.service lib/systemd/system/
+debian/bin/pardus-usb-syncguard usr/bin/

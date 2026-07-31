@@ -1,0 +1,12 @@
+Source: pardus-thermal-guard
+Section: utils
+Priority: optional
+Maintainer: Teknofest 2026 Geliştirme <iletisim@teknofest.org>
+Build-Depends: debhelper-compat (= 13), dh-python, python3-all
+Standards-Version: 4.6.0
+
+Package: pardus-thermal-guard
+Architecture: all
+Depends: python3, python3-pyqt5, lm-sensors, ${misc:Depends}
+Description: Pardus Thermal Guard araci.
+ Pardus Teknofest 2026 kapsaminda gelistirilmis sistem araci.

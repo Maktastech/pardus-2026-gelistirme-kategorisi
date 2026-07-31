@@ -1,0 +1,3 @@
+src/*.py usr/share/pardus-log-doctor/
+data/*.desktop usr/share/applications/
+debian/bin/pardus-log-doctor usr/bin/

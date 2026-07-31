@@ -1,0 +1,6 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pardus-usb-syncguard
+
+Files: *
+Copyright: 2026 Teknofest
+License: GPL-3.0+

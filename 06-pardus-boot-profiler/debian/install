@@ -1,0 +1,3 @@
+src/*.py usr/share/pardus-boot-profiler/
+data/*.desktop usr/share/applications/
+debian/bin/pardus-boot-profiler usr/bin/

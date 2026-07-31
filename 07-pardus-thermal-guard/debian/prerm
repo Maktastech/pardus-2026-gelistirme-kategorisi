@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+if [ "$1" = "remove" ]; then
+    systemctl stop pardus-thermal-guard.service || true
+    systemctl disable pardus-thermal-guard.service || true
+fi
+#DEBHELPER#
+exit 0

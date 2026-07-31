@@ -1,0 +1,2 @@
+#!/bin/bash
+exec python3 /usr/share/pardus-ram-guard/pardus_ram_guard.py "$@"

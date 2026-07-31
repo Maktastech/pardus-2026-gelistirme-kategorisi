@@ -1,0 +1,3 @@
+src/*.py usr/share/pardus-offline-bundler/
+data/*.desktop usr/share/applications/
+debian/bin/pardus-offline-bundler usr/bin/

@@ -1,0 +1,2 @@
+#!/bin/bash
+exec python3 /usr/share/pardus-desktop-restorer/pardus_desktop_restorer.py "$@"

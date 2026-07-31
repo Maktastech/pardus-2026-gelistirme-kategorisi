@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+if [ "$1" = "remove" ]; then
+    systemctl stop pardus-usb-syncguard.service || true
+    systemctl disable pardus-usb-syncguard.service || true
+fi
+#DEBHELPER#
+exit 0

@@ -1,0 +1,4 @@
+src/*.py usr/share/pardus-apt-doctor/
+data/*.desktop usr/share/applications/
+data/*.policy usr/share/polkit-1/actions/
+debian/bin/pardus-apt-doctor usr/bin/

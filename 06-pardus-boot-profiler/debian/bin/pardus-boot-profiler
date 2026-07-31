@@ -1,0 +1,2 @@
+#!/bin/bash
+exec python3 /usr/share/pardus-boot-profiler/pardus_boot_profiler.py "$@"
