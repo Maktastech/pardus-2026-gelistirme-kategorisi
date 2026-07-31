@@ -13,6 +13,7 @@ import json
 import os
 import subprocess
 import sys
+import logging
 
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout,
@@ -51,8 +52,8 @@ class YardimciOkuyucu(QThread):
                     self.mesaj.emit(json.loads(satir))
                 except ValueError:
                     self.mesaj.emit({"tur": "gunluk", "metin": satir})
-        except Exception:
-            pass
+        except (OSError, BrokenPipeError) as e:
+            logging.error("AptDoctor Okuyucu hatasi: %s", e)
         self.kapandi.emit()
 
 
@@ -257,11 +258,11 @@ class AptDoctor(QWidget):
             try:
                 self.surec.stdin.write(json.dumps({"komut": "cikis"}) + "\n")
                 self.surec.stdin.flush()
-            except Exception:
-                pass
+            except (OSError, BrokenPipeError) as e:
+                logging.error("AptDoctor stdin yazma hatasi: %s", e)
             try:
                 self.surec.wait(timeout=3)
-            except Exception:
+            except subprocess.TimeoutExpired:
                 self.surec.terminate()
         olay.accept()
 

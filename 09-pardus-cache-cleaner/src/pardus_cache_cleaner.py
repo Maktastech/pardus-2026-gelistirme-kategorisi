@@ -10,6 +10,7 @@ import os
 import re
 import subprocess
 import sys
+import logging
 
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout,
@@ -44,7 +45,11 @@ def komut_ciktisi(args, zaman_asimi=90):
     try:
         s = subprocess.run(args, capture_output=True, text=True, timeout=zaman_asimi)
         return s.stdout
-    except Exception:
+    except subprocess.SubprocessError as e:
+        logging.error("komut_ciktisi subprocess hatasi: %s", e)
+        return ""
+    except OSError as e:
+        logging.error("komut_ciktisi calistirma hatasi: %s", e)
         return ""
 
 

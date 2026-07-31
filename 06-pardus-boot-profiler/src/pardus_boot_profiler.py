@@ -10,6 +10,7 @@ import os
 import re
 import subprocess
 import sys
+import logging
 
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtGui import QColor
@@ -61,7 +62,11 @@ def blame_listesi():
     try:
         s = subprocess.run(["systemd-analyze", "blame", "--no-pager"],
                            capture_output=True, text=True, timeout=60)
-    except Exception:
+    except subprocess.SubprocessError as e:
+        logging.error("blame_listesi subprocess hatasi: %s", e)
+        return []
+    except OSError as e:
+        logging.error("blame_listesi calistirma hatasi: %s", e)
         return []
     satirlar = []
     for satir in s.stdout.splitlines():
@@ -85,7 +90,11 @@ def birim_durumu(birim):
         s = subprocess.run(["systemctl", "is-enabled", birim],
                            capture_output=True, text=True, timeout=10)
         return s.stdout.strip() or "bilinmiyor"
-    except Exception:
+    except subprocess.SubprocessError as e:
+        logging.error("birim_durumu subprocess hatasi: %s", e)
+        return "bilinmiyor"
+    except OSError as e:
+        logging.error("birim_durumu calistirma hatasi: %s", e)
         return "bilinmiyor"
 
 
