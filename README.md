@@ -44,4 +44,4 @@ Pardus'un açılışını (boot) yavaşlatan servisleri analiz edip listeler, op
 
 Her aracın kendi klasörü içerisinde bir `install.sh` kurulum betiği ve `src` klasöründe kaynak kodları bulunmaktadır. Herhangi bir aracı test etmek için klasör dizinine girip terminal üzerinden `python3 src/dosya_adi.py` şeklinde doğrudan çalıştırabilirsiniz.
 
-**Tüm araçlar Pardus 23 XFCE üzerinde başarıyla test edilmiştir.**
+**Tüm araçlar Pardus 25 XFCE üzerinde başarıyla test edilmiştir.**
