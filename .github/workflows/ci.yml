@@ -30,6 +30,15 @@ jobs:
       run: |
         pytest tests/
 
+    - name: GUI Smoke Test
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        for f in */src/pardus_*.py; do
+          QT_QPA_PLATFORM=offscreen timeout 5 python3 "$f" || \
+            [ $? -eq 124 ] || { echo "ÇÖKTÜ: $f"; exit 1; }
+        done
+
     - name: Install Debian Packaging Tools
       run: |
         sudo apt-get update
